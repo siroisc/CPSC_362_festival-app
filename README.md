@@ -1,1 +1,1 @@
-# CPSC_362_festival-app
+# FestApp
