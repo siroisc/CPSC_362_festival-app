@@ -1,10 +1,9 @@
 
 body {
-  margin: 200;
-  padding: 200;
-  background-image: url(https://image.jimcdn.com/app/cms/image/transf/dimension=1190x10000:format=jpg/path/sa6549607c78f5c11/image/i82f8384a1348ab84/version/1554202007/tomorrowland-best-summer-music-festivals-europe.jpg);
+  margin: 0;
+  padding: 0;
+  background: url(https://image.jimcdn.com/app/cms/image/transf/dimension=1190x10000:format=jpg/path/sa6549607c78f5c11/image/i82f8384a1348ab84/version/1554202007/tomorrowland-best-summer-music-festivals-europe.jpg) no-repeat;
   background-size: cover;
-  background-position: center;
   font-family: sans-serif;
 }
 
