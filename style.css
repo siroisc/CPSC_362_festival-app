@@ -7,6 +7,13 @@ body {
   font-family: sans-serif;
 }
 
+body h1 {
+  padding-top: 10px;
+  font-size: 82px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
 .loginbox{
   width: 320px;
   height: 420px;
@@ -30,7 +37,7 @@ body {
    left: calc(50% - 50px);
 }
 
-h1 {
+.loginbox h1 {
   margin: 0;
   padding: 0 0 20px;
   text-align: center;
@@ -66,7 +73,7 @@ h1 {
   color: darkgrey;
 }
 
-.loginbox input[type="submit"] {
+.loginbox input[type="button"] {
   border: none;
   outline: none;
   height: 40px;
@@ -76,7 +83,7 @@ h1 {
   border-radius: 20px;
 }
 
-.loginbox input[type="submit"]:hover{
+.loginbox input[type="button"]:hover{
   cursor: pointer;
   background: #FF8400;
   color: #000;
