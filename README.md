@@ -1,3 +1,7 @@
+# Github Server
+https://siroisc.github.io/CPSC_362_festival-app/
+
+
 
 # Festival App
 	CPSC 362 - Fall '19
