@@ -1,0 +1,12 @@
+Current user:           root@localhost
+SSL:                    Not in use
+Using delimiter:        ;
+Server version:         5.6.37 MySQL Community Server (GPL)
+Protocol version:       10
+Connection:             localhost via TCP/IP
+Server characterset:    latin1
+Db     characterset:    latin1
+Client characterset:    utf8
+Conn.  characterset:    utf8
+TCP port:               3306
+Uptime:                 1 hour 6 min 53 sec
