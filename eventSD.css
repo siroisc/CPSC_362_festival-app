@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap');
+
+body {
+margin: 0;
+padding: 0;
+font-family: 'Roboto Condensed', sans-serif;
+overflow: hidden;
+
+}
+
+
+section {
+  width: 100%;
+  height: 110vh;
+  background-size: cover;
+}
+
+section .left-box {
+  width: 50%;
+  height: 100%;
+  float:left;
+  padding: 50px;
+  background-color: #ffc800;
+  box-sizing: border-box;
+  }
+
+section .left-box .content {
+  color: #000;
+  text-align: center;
+  transition: .5s;
+  padding: 15px;
+  max-height: inherit;
+  text-align: center;
+  }
+
+
+
+
+section .left-box .content h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+  }
+
+section .left-box ul li {
+  list-style: none;
+  background: #fff;
+  box-sizing: border-box;
+  height: 10vh;
+  width: 70vh;
+  margin-top: 10px;
+  border-radius:1px;
+  }
+
+section .left-box ul li .time {
+  position: relative;
+  padding: 20px;
+  background: #262626;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  text-align:  center;
+  transition: .5s;
+
+  }
+
+section .left-box ul li .time:hover {
+  background: #E91E63;
+}
+
+section .left-box ul li .time h2 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 50px;
+  line-height: 30px;
+  }
+
+section .left-box ul li .artist {
+  padding: 2vh;
+  background: #fff;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  text-align: center;
+  font-size: 2vh;
+  transition: .5s;
+  }
+
+
+section .left-box ul li .genre {
+  padding: 2vh;
+  background: #fff;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  font-size: 2vh;
+  text-align: center;
+}
+section .left-box ul li .venue {
+  padding: 2vh;
+  background: #fff;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  font-size: 2.5vh;
+  text-align: center;
+}
+section .left-box ul li .details {
+  width: 50%;
+  height: 33%;
+  padding: 0.5vh;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: .5s;
+}
+section .left-box ul li .details:hover {
+  background-color: #d1d1d1;
+}
+
+section .left-box ul li .addevent {
+  width: 50%;
+  height: 33%;
+  padding: 0.5vh;
+  cursor: pointer;
+  background-color: #db2100; /* RED */
+  border: none;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: .5s;
+}
+
+section .left-box ul li .addevent:hover {
+  background-color: #e36b56;
+}
+
+
+section .events {
+  width: 50%;
+  height: 100%;
+  float:left;
+  padding: 50px;
+
+  box-sizing: border-box;
+
+  }
+
+  section .events .sort{
+    background-color: white;
+  }
+
+  section .events .sort .sortButtons{
+    text-align: center;
+  }
+
+  section .events .sort .sortButtons button {
+    width: 20%;
+    height: 33%;
+    cursor: pointer;
+    background-color: #ffd94d;
+    border: none;
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-align: center;
+    text-decoration: none;
+    display:inline;
+    align-items: center;
+    font-size: 16px;
+    transition: .5s;
+    border-radius: 3px;
+  }
+
+  section .events .sort .sortButtons button:hover {
+    background-color: #ffc800;
+  }
+
+  section .events .search #inputSearch {
+    background-image: url('https://cdn1.iconfinder.com/data/icons/hawcons/32/698956-icon-111-search-128.png'); /* Add a search icon to input */
+    background-size: 3vh;
+    background-position: 1vh 1vh; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 90%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+  }
+
+section .events .content {
+  color: #000;
+  text-align: center;
+  transition: .5s;
+  padding: 15px;
+  max-height: inherit;
+  text-align: center;
+  }
+
+
+section .events h3{
+color: black;
+text-align: center;
+}
+
+section .events .content h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 2px 2px 0 #000;
+  }
+
+
+section .events ul li {
+  list-style: none;
+  background: #fff;
+  box-sizing: border-box;
+  height: 10vh;
+  width: 70vh;
+  margin-top: 10px;
+
+  }
+
+section .events ul li .time {
+  position: relative;
+  padding: 20px;
+  background: #262626;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  text-align:  center;
+  transition: .5s;
+  }
+
+
+section .events ul li .time h2 {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 50px;
+  line-height: 30px;
+  }
+
+section .events ul li .artist {
+  padding: 2vh;
+  background: #fff;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  text-align: center;
+  font-size: 2vh;
+  transition: .5s;
+  }
+
+
+section .events ul li .genre {
+  padding: 2vh;
+  background: #fff;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  font-size: 2vh;
+  text-align: center;
+}
+section .events ul li .venue {
+  padding: 2vh;
+  background: #fff;
+  box-sizing: border-box;
+  width: 25%;
+  height: 67%;
+  float: left;
+  font-size: 2vh;
+  text-align: center;
+}
+section .events ul li .details {
+  width: 50%;
+  height: 33%;
+  padding: 0.5vh;
+  cursor: pointer;
+  background-color: #ffc800;
+  border: none;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: .5s;
+}
+section .events ul li .details:hover {
+  background-color: #ffd94d;
+}
+
+section .events ul li .addevent {
+  width: 50%;
+  height: 33%;
+  padding: 0.5vh;
+  cursor: pointer;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: .5s;
+
+}
+
+section .events ul li .addevent:hover {
+  background-color: #83c786;
+}
+
+
+
+#body {
+    position: absolute;
+
+    height: inherit;
+    width: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#head {
+
+    flex-shrink: 0;
+}
+
+#contentR{
+
+    overflow-y:scroll;
+    height: 75%;
+}
+#contentL{
+
+  overflow-y:scroll;
+  height: 82%;
+
+}
