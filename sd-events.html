@@ -1,57 +1,225 @@
 <!DOCTYPE html>
 <html>
+  <script src="jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
+  var events = [["10/25", "Illenium", "Future Bass", "Academy", "https://www.facebook.com/ILLENIUM/"],
+                ["10/26", "Eprom", "Experimental", "Shrine", "https://www.facebook.com/ILLENIUM/"],
+                ["10/27", "Svdden Death", "Dubstep", "1720", "https://www.facebook.com/ILLENIUM/"],
+                ["10/28", "Zomboy", "Dubstep", "Avalon", "https://www.facebook.com/ILLENIUM/"]];
+
+  function addList(date, artist, genre, venue, link) {
+      var newli = document.createElement("li");
+      var newTime = document.createElement("div");
+      newTime.className = "time";
+
+      var newH2 = document.createElement("h2");
+      newH2.innerHTML = date;
+
+      var newArtist = document.createElement("div");
+      newArtist.className = "artist";
+      newArtist.innerHTML = artist;
+
+      var newGenre = document.createElement("div");
+      newGenre.className = "genre";
+      newGenre.innerHTML = genre;
+
+      var newVenue = document.createElement("div");
+      newVenue.className = "venue";
+      newVenue.innerHTML = venue;
+
+      var newDetail = document.createElement("button");
+      newDetail.className = "details";
+      newDetail.innerHTML = "View Details";
+      newDetail.href = link;
+
+      var newButton = document.createElement("button");
+      newButton.className = "addevent";
+      newButton.innerHTML = "Add to Your Events";
+      newButton.onclick = function() { addEvent(newli, newButton); }
+
+      var listR = document.getElementById('contentR');
+      var listL = document.getElementById('contentL');
+      listR.appendChild(newli);
+      newli.appendChild(newTime);
+      newTime.appendChild(newH2);
+      newli.appendChild(newArtist);
+      newli.appendChild(newGenre);
+      newli.appendChild(newVenue);
+      newli.appendChild(newDetail);
+      newli.appendChild(newButton);
+
+
+
+    }
+
+    function addEvent(id, button) {
+      var addID = id;
+      var destination = document.getElementById('contentL');
+      destination.appendChild(addID);
+      button.innerHTML = "Remove From Your Events";
+      button.onclick = function() { removeEvent(addID, button); }
+
+    }
+
+    function removeEvent(id, button) {
+      var removeID = id;
+      var destination = document.getElementById('contentR');
+      destination.appendChild(removeID);
+      button.innerHTML = "Add to Your Events";
+      button.onclick = function() { addEvent(removeID, button); }
+      sortList(events);
+    }
+
+    function createList(list){
+      for (var i = 0; i < list[0].length-1; i++) {
+          addList(list[i][0], list[i][1], list[i][2], list[i][3], list[i][4]);
+      }
+    }
+
+    function clearList(){
+      document.getElementById("contentR").innerHTML = "";
+    }
+
+    function sortList(list, num, name){
+      clearList();
+      var sortItem = num;
+
+
+      switch (sortItem) {
+        case 0:
+          list.sort(sortDate);
+          break;
+        case 1:
+          list.sort(sortArtist);
+          break;
+        case 2:
+          list.sort(sortGenre);
+          break;
+        case 3:
+          list.sort(sortVenue);
+          break;
+        default:
+
+      }
+      createList(list);
+    }
+
+    function sortDate(a, b) {
+      document.getElementById('date').style.backgroundColor = "#741796";
+      document.getElementById('artist').style.backgroundColor = "#835694";
+      document.getElementById('genre').style.backgroundColor = "#835694";
+      document.getElementById('venue').style.backgroundColor = "#835694";
+      if (a[0] === b[0]) {
+        return 0;
+      }
+      else {
+        return (a[0] < b[0]) ? -1 : 1;
+      }
+    }
+    function sortArtist(a, b) {
+      document.getElementById('date').style.backgroundColor = "#835694";
+      document.getElementById('artist').style.backgroundColor = "#741796";
+      document.getElementById('genre').style.backgroundColor = "#835694";
+      document.getElementById('venue').style.backgroundColor = "#835694";
+      if (a[1] === b[1]) {
+        return 0;
+      }
+      else {
+        return (a[1] < b[1]) ? -1 : 1;
+      }
+    }
+    function sortGenre(a, b) {
+      document.getElementById('date').style.backgroundColor = "#835694";
+      document.getElementById('artist').style.backgroundColor = "#835694";
+      document.getElementById('genre').style.backgroundColor = "#741796";
+      document.getElementById('venue').style.backgroundColor = "#835694";
+      if (a[2] === b[2]) {
+        return 0;
+      }
+      else {
+        return (a[2] < b[2]) ? -1 : 1;
+      }
+    }
+    function sortVenue(a, b) {
+      document.getElementById('date').style.backgroundColor = "#835694";
+      document.getElementById('artist').style.backgroundColor = "#835694";
+      document.getElementById('genre').style.backgroundColor = "#835694";
+      document.getElementById('venue').style.backgroundColor = "#741796";
+      if (a[3] === b[3]) {
+        return 0;
+      }
+      else {
+        return (a[3] < b[3]) ? -1 : 1;
+      }
+    }
+
+    function searchList() {
+      // Declare variables
+      var input, filter, ul, li, a, i, txtValue;
+      input = document.getElementById('inputSearch');
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("contentR");
+      li = ul.getElementsByTagName('li');
+
+      div = li[0].getElementsByTagName("div")[0];
+      data = div[1].textContent;
+      document.getElementById('artist').innerHTML = "hello";
+
+    }
+
+
+  </script>
   <head>
       <title>San Diego Events</title>
-      <link rel="stylesheet" type="text/css" href="eventStyle.css">
+      <link rel="stylesheet" type="text/css" href="eventSD.css">
+      <script src="jquery-csv.js"></script>
   </head>
+
   <body>
     <section>
       <div class="left-box">
         <div class="content">
-          <h1>San Diego Events and Shows</h1>
-          <p>Here's an area were we can describe the content that is to be displayed in tabular format. Content contains event titles, destinations, map interfaces, location details, events times and dates, ages permitted, etc.</p>
+          <h1>Your Events</h1>
         </div>
+        <div id="body">
+
+            <ul id="contentL">
+
+            </ul>
+      </div>
       </div>
 
       <div class="events">
-      <ul>
-        <li>
-          <div class="time">
-            <h2>24<br><span>June</span></h2>
-          </div>
-          <div class="details">
-            <h3>Event Title</h3>
-            <p>Here's an area were we can describe the content that is to be displayed in tabular format. Content contains event titles, destinations, map interfaces, location details, events times and dates, ages permitted, etc.</p>
-            <a href="#">View Details</a>
-          </div>
-          <div style="clear: both;"></div>
-        </li>
+        <div class="content">
+          <h1>San Diego Events</h1>
 
-        <li>
-          <div class="time">
-            <h2>24<br><span>June</span></h2>
+        </div>
+        <div class="search">
+          <input type="text" id="inputSearch" onkeyup="searchList()" placeholder="Search for names..">
+        </div>
+        <div class="sort">
+          <h3>Sort By:</h3>
+          <div class="sortButtons">
+            <button type="button" id="date" onclick="sortList(events, 0)">Date</button>
+            <button type="button" id="artist" onclick="sortList(events, 1)">Artist</button>
+            <button type="button" id="genre" onclick="sortList(events, 2)">Genre</button>
+            <button type="button" id="venue" onclick="sortList(events, 3)">Venue</button>
           </div>
-          <div class="details">
-            <h3>Event Title</h3>
-            <p>Here's an area were we can describe the content that is to be displayed in tabular format. Content contains event titles, destinations, map interfaces, location details, events times and dates, ages permitted, etc.</p>
-            <a href="#">View Details</a>
-          </div>
-          <div style="clear: both;"></div>
-        </li>
 
-        <li>
-          <div class="time">
-            <h2>24<br><span>June</span></h2>
-          </div>
-          <div class="details">
-            <h3>Event Title</h3>
-            <p>Here's an area were we can describe the content that is to be displayed in tabular format. Content contains event titles, destinations, map interfaces, location details, events times and dates, ages permitted, etc.</p>
-            <a href="#">View Details</a>
-          </div>
-          <div style="clear: both;"></div>
-        </li>
-      </ul>
+
+        </div>
+        <div id="body">
+
+            <ul id="contentR">
+              <script type="text/javascript">
+                createList(events);
+              </script>
+            </ul>
+
+
+      </div>
     </div>
     </section>
-    <body>
+  </body>
 </html>
+
