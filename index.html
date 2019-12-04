@@ -32,7 +32,7 @@
       </div>
     </div>
 
-  <a onclick="document.getElementById('loginModal').style.display='block'" style="cursor: pointer;" class="w3-padding-large w3-hover-green w3-hide-small w3-right"><i>Login</i></a>
+  <a onclick="showLoginModal()" style="cursor: pointer;" class="w3-padding-large w3-hover-green w3-hide-small w3-right"><i>Login</i></a>
   </div>
 </div>
 
@@ -46,23 +46,34 @@
         <div class="login-page">
           <div class="form">
             <h1>Login</h1>
-            <form class="register-form">
-              <input type="text" placeholder="name"/>
-              <input type="password" placeholder="password"/>
-              <input type="text" placeholder="email address"/>
-              <button>create</button>
-              <p class="message">Already registered? <a href="#">Sign In</a></p>
-            </form>
             <form class="login-form">
-              <input type="text" placeholder="username"id="username_field"/>
-              <input type="password" placeholder="password"id="password_field"/>
+              <input type="text" placeholder="email"id="email_login"/>
+              <input type="password" placeholder="password"id="password_login"/>
               <button onclick="login()">login</button>
-              <p class="message">Not registered? <a href="#">Create an account</a></p>
+              <p class="message">Not registered? <a onclick="showRegisterModal()" style="cursor: pointer;">Create an account</a></p>
             </form>
           </div>
         </div>
 
     </div>
+
+    <div id="registerModal" class="w3-modal w3-animate-opacity">
+
+          <div class="register-page">
+            <div class="form">
+              <h1>Register</h1>
+              <form class="register-form">
+                <input type="text" placeholder="email"id="email_register"/>
+                <input type="password" placeholder="password"id="password_register"/>
+
+                <button onclick="register()">create</button>
+                <p class="message">Already registered? <a onclick="showLoginModal()" style="cursor: pointer;">Sign In</a></p>
+              </form>
+
+            </div>
+          </div>
+
+      </div>
 
 
 <!-- Area Select -->
@@ -110,7 +121,8 @@
 
    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
     <!-- TODO: Add SDKs for Firebase products that you want to use
          https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
@@ -144,3 +156,4 @@
 
 </body>
 </html>
+
