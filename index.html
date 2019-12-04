@@ -3,7 +3,7 @@
 <title>FestApp</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,70 +14,7 @@
   body {font-family: "Lato", sans-serif}
   .mySlides {display: none}
 
-  .container {
-  position: relative;
-  width: 100%;
-}
 
-.image {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: white;
-}
-
-#bayarea:hover  {
-  opacity: 0.75;
-}
-
-#la:hover  {
-  opacity: 0.75;
-}
-
-#sandiego:hover  {
-  opacity: 0.75;
-}
-
-.text {
-  color: black;
-  font-size: 2.5em;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
-}
-
-
-  h1{
-    font-size: 82px;
-  }
 </style>
 <body>
 
@@ -95,7 +32,7 @@
       </div>
     </div>
 
-  <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  <a onclick="document.getElementById('loginModal').style.display='block'" style="cursor: pointer;" class="w3-padding-large w3-hover-green w3-hide-small w3-right"><i>Login</i></a>
   </div>
 </div>
 
@@ -104,7 +41,28 @@
   <h1>FestApp</h1>
 </div>
 
+  <div id="loginModal" class="w3-modal w3-animate-opacity">
 
+        <div class="login-page">
+          <div class="form">
+            <h1>Login</h1>
+            <form class="register-form">
+              <input type="text" placeholder="name"/>
+              <input type="password" placeholder="password"/>
+              <input type="text" placeholder="email address"/>
+              <button>create</button>
+              <p class="message">Already registered? <a href="#">Sign In</a></p>
+            </form>
+            <form class="login-form">
+              <input type="text" placeholder="username"id="username_field"/>
+              <input type="password" placeholder="password"id="password_field"/>
+              <button onclick="login()">login</button>
+              <p class="message">Not registered? <a href="#">Create an account</a></p>
+            </form>
+          </div>
+        </div>
+
+    </div>
 
 
 <!-- Area Select -->
@@ -150,24 +108,39 @@
    <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
    <script type="text/javascript" src="js/csv_to_html_table.js"></script>
 
-<script>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
 
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAxwewaZkPrE6-SQvs03cDRqSFwoF4Y810",
+        authDomain: "festapp-c7d0d.firebaseapp.com",
+        databaseURL: "https://festapp-c7d0d.firebaseio.com",
+        projectId: "festapp-c7d0d",
+        storageBucket: "festapp-c7d0d.appspot.com",
+        messagingSenderId: "321036829178",
+        appId: "1:321036829178:web:dee30fb0dc33b6083f6443",
+        measurementId: "G-X2BWPB6WHT"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
 
-// Used to toggle the menu on small screens when clicking on the menu button
-function myFunction() {
-  var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-  } else {
-    x.className = x.className.replace(" w3-show", "");
-  }
-}
+      var modal = document.getElementById('loginModal');
 
-
-
-
-</script>
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+    </script>
+   <script src="index.js"></script>
 
 </body>
 </html>
