@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <script src="jquery-3.4.1.min.js"></script>
   <script type="text/javascript">
   var events = [["10/25", "Illenium", "Future Bass", "Academy", "https://www.facebook.com/ILLENIUM/"],
                 ["10/26", "Eprom", "Experimental", "Shrine", "https://www.facebook.com/ILLENIUM/"],
@@ -170,11 +171,33 @@
   </script>
   <head>
       <title>Los Angeles Events</title>
-      <link rel="stylesheet" type="text/css" href="eventLA.css">
+      <link rel="stylesheet" type="text/css" href="eventBay.css">
       <script src="jquery-csv.js"></script>
+      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
+    <!-- Navbar -->
+    <div class="w3-top">
+      <div class="w3-bar w3-white w3-card">
+        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+        <a href="festivals.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FESTIVALS</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+          <button class="w3-padding-large w3-button" title="More">ACCOUNT <i class="fa fa-caret-down"></i></button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="login.html" class="w3-bar-item w3-button">SIGN IN</a>
+            <a href="register.html" class="w3-bar-item w3-button">REGISTER</a>
+          </div>
+        </div>
+
+      <a onclick="showLoginModal()" style="cursor: pointer;" class="w3-padding-large w3-hover-green w3-hide-small w3-right"><i>Login</i></a>
+      <a href="user_profile.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">MY PROFILE</a>
+      </div>
+    </div>
+
     <section>
       <div class="left-box">
         <div class="content">
