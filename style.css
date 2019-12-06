@@ -120,3 +120,12 @@ h1{
   color: #4CAF50;
   text-decoration: none;
 }
+
+.form-link link {
+  color: #4CAF50;
+}
+
+.login-button button {
+    background-color: #4CAF50;
+    color: #FFF;
+}
