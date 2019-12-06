@@ -34,7 +34,7 @@
 
  <!-- Trigger the login modal -->
  <div class="login-button">
-  <button type="button" class="w3-padding-large w3-hover-green w3-hide-small w3-right login-button" data-toggle="modal" data-target="#myModal">Login</button>
+  <button type="button" class="w3-padding-large w3-hover-green w3-hide-small w3-right login-button" data-toggle="modal" data-target="#login-modal">Login</button>
 </div>
 <!--  <a onclick="showLoginModal()" style="cursor: pointer;" class="w3-padding-large w3-hover-green w3-hide-small w3-right"><i>Login</i></a>  -->
   <a href="user_profile.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">MY PROFILE</a>
@@ -50,8 +50,8 @@
 <div class="container">
  <!-- Trigger the modal with a button -->
 
- <!-- Modal -->
- <div class="modal fade" id="myModal" role="dialog">
+ <!-- Login Modal -->
+ <div class="modal fade" id="login-modal" role="dialog">
    <div class="modal-dialog">
 
      <!-- Modal content-->
@@ -85,6 +85,44 @@
      </div>
    </div>
  </div>
+
+
+ <!-- Registration Modal -->
+ <div class="modal fade" id="reg-modal" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <h4 style="color:black;"><span class="glyphicon glyphicon-lock"></span>Login</h4>
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+       </div>
+       <div class="modal-body">
+         <form role="form">
+           <div class="form-group">
+             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
+             <input type="text" class="form-control" id="usrname" placeholder="Enter username">
+           </div>
+           <div class="form-group">
+             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+             <input type="text" class="form-control" id="psw" placeholder="Enter password">
+           </div>
+           <div class="checkbox">
+             <label><input type="checkbox" value="" checked>Remember me</label>
+           </div>
+           <button type="submit" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+         </form>
+       </div>
+       <div class="modal-footer">
+         <p class="message">Not registered? <a onclick="showRegisterModal()" style="cursor: pointer;"> <u>Create an account</u></a></p>
+         <br>
+         <p class="form-link">Forgot <a href="#">Password?</a></p>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
 </div>
 
 <!--
@@ -192,15 +230,16 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
-      var modal = document.getElementById('loginModal');
+      // make auth and firestore references
+      const auth = firebase.auth();
+      const db = firebase.firestore();
 
-      // When the user clicks anywhere outside of the modal, close it
-      window.onclick = function(event) {
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
-      }
+      // update firestore settings
+      db.settings({ timestampsInSnapshots: true});
+
     </script>
+
+    <!-- compiled and minified JavaScript -->
     <link src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/auth.js"></script>
     <script src="index.js"></script>
@@ -211,3 +250,14 @@
   <!-- Navbar -->
 </body>
 </html>
+
+<!--
+var modal = document.getElementById('loginModal');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+-->
