@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="w3.css">
-<!-- // Saved CSS file locally as w3.css// <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<!-- // Saved CSS file locally as w3.css // <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -36,7 +36,6 @@
  <div class="login-button">
   <button type="button" class="w3-padding-large w3-hover-green w3-hide-small w3-right login-button" data-toggle="modal" data-target="#login-modal">Login</button>
 </div>
-<!--  <a onclick="showLoginModal()" style="cursor: pointer;" class="w3-padding-large w3-hover-green w3-hide-small w3-right"><i>Login</i></a>  -->
   <a href="user_profile.php" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">MY PROFILE</a>
   </div>
 </div>
@@ -51,7 +50,7 @@
  <!-- Trigger the modal with a button -->
 
  <!-- Login Modal -->
- <div class="modal hide fade" id="login-modal" role="dialog">
+ <div class="modal fade" id="login-modal" role="dialog">
    <div class="modal-dialog">
 
      <!-- Modal content-->
@@ -62,10 +61,10 @@
 
        </div>
        <div class="modal-body">
-         <form role="form">
+         <form id="login-form" role="form">
            <div class="form-group">
-             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-             <input type="text" class="form-control" id="usrname" placeholder="Enter username">
+             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email Address</label>
+             <input type="text" class="form-control" id="email_address" placeholder="Enter email address">
            </div>
            <div class="form-group">
              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
@@ -74,7 +73,7 @@
            <div class="checkbox">
              <label><input type="checkbox" value="" checked>Remember me</label>
            </div>
-           <button type="submit" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+           <button type="submit" class="btn btn-default btn-success btn-block modal-trigger"><span class="glyphicon glyphicon-off"></span> Login</button>
          </form>
        </div>
        <div class="modal-footer">
@@ -88,7 +87,7 @@
 
 
  <!-- Registration Modal -->
- <div class="modal hide fade" id="reg-modal" role="dialog">
+ <div id="reg-modal" class="modal fade" role="dialog">
    <div class="modal-dialog">
 
      <!-- Modal content-->
@@ -96,27 +95,26 @@
        <div class="modal-header">
          <h4 style="color:black;"><span class="glyphicon glyphicon-lock"></span>Register</h4>
          <button type="button" class="close" data-dismiss="modal">&times;</button>
-
        </div>
        <div class="modal-body">
-         <form role="form">
+         <form id="reg-form" role="form">
            <div class="form-group">
              <label for="usrname"><span class="glyphicon glyphicon-user"></span> First Name</label>
-             <input type="text" class="form-control" id="fname" placeholder="Enter first name">
+             <input type="text" class="form-control" id="fname" required placeholder="Enter first name">
            </div>
            <div class="form-group">
              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Last name</label>
-             <input type="text" class="form-control" id="lname" placeholder="Enter last name">
+             <input type="text" class="form-control" id="lname" required placeholder="Enter last name">
            </div>
            <div class="form-group">
-             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username</label>
-             <input type="text" class="form-control" id="usrname" placeholder="Enter username">
+             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+             <input type="email" class="form-control" id="reg_email" required placeholder="Enter email address">
            </div>
            <div class="form-group">
              <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-             <input type="text" class="form-control" id="psw" placeholder="Enter password">
+             <input type="password" class="form-control" id="reg_psw" required placeholder="Enter password">
            </div>
-           <button type="submit" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-off"></span> Login</button>
+           <button type="submit" class="btn btn-default btn-success btn-block modal-trigger"><span class="glyphicon glyphicon-off"></span> Register</button>
          </form>
        </div>
        <div class="modal-footer">
@@ -209,13 +207,18 @@
    <script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
    <script type="text/javascript" src="js/csv_to_html_table.js"></script>
 
-   <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script>
+
+
+     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+     <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+     <!-- Add Firebase products that you want to use -->
+     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+
 
     <script>
       // Your web app's Firebase configuration
@@ -237,12 +240,10 @@
       const auth = firebase.auth();
       const db = firebase.firestore();
 
-      // update firestore settings
-      db.settings({ timestampsInSnapshots: true});
-
     </script>
 
     <!-- compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="scripts/auth.js"></script>
     <script src="index.js"></script>
@@ -250,17 +251,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <!-- Navbar -->
+
 </body>
 </html>
-
-<!--
-var modal = document.getElementById('loginModal');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
--->

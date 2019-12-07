@@ -15,7 +15,7 @@ function login() {
 function register(){
 
   var email = document.getElementById('email_register').value;
-  var password = document.getElementById('password_register').value;
+  var password = document.getElementById('psw').value;
 
   firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
 
