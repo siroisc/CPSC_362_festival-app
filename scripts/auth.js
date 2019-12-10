@@ -1,3 +1,14 @@
+// listen for auth status changes
+auth.onAuthStateChanged(user => {
+  if (user) {
+  console.log('user signed in');
+}
+else {
+  console.log('user signed out');
+}
+})
+
+
 // registration
 const regForm = document.querySelector('#reg-form');
 regForm.addEventListener('submit', (e) => {
@@ -12,9 +23,11 @@ regForm.addEventListener('submit', (e) => {
 
   // register the user in Firebase
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    var modal = document.querySelector('#reg-modal');
-  //  M.Modal.getInstance(modal).close();
-    regForm.reset();
+    console.log(email + ' has successfully registered');
+
+  //  var modal = document.querySelector('#reg-modal');
+    //M.Modal.getInstance(modal).close();
+  //  regForm.reset();
   });
 });
 
@@ -22,13 +35,23 @@ regForm.addEventListener('submit', (e) => {
 const logout = document.querySelector('#sign-out');
 logout.addEventListener('click', (e) => {
   e.preventDefault();
-  auth.signOut().then(() => {
-    console.log('user has signed out');
-  })
-})
+  auth.signOut();
+});
 
 // login Modal
 const loginForm = document.querySelector('#login-form');
-regForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', (e) => {
+  e.preventDefault();
 
+  // get user info
+  const email = loginForm['email_address'].value;
+  const password = loginForm['psw'].value;
+
+  auth.signInWithEmailAndPassword(email, password).then(cred => {
+
+    // close the login modal and reset the Form
+  //  const modal = document.querySelector('#login-modal');
+//    M.Modal.getInstance(modal).close();
+//    loginForm.reset();
+  });
 });
