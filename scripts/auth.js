@@ -1,3 +1,9 @@
+// get dataTables
+db.collection('user').get().then(snapshot => {
+  console.log(snapshot.docs)
+});
+
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
@@ -6,7 +12,13 @@ auth.onAuthStateChanged(user => {
 else {
   console.log('user signed out');
 }
-})
+});
+
+$('#button').submit(function(e) {
+   e.preventDefault();
+   // Coding
+   $('#login-form').modal('hide'); //or  $('#IDModal').modal('hide');
+});
 
 
 // registration
@@ -25,9 +37,10 @@ regForm.addEventListener('submit', (e) => {
   auth.createUserWithEmailAndPassword(email, password).then(cred => {
     console.log(email + ' has successfully registered');
 
-  //  var modal = document.querySelector('#reg-modal');
-    //M.Modal.getInstance(modal).close();
-  //  regForm.reset();
+    var modal = document.querySelector('#reg-modal');
+/*    M.Modal.getInstance(modal).close();
+    regForm.reset();
+*/
   });
 });
 
@@ -48,10 +61,18 @@ loginForm.addEventListener('submit', (e) => {
   const password = loginForm['psw'].value;
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
+    // attempt to close the modal
+/*
+    $('#login-form').submit(function(e) {
+       e.preventDefault();
+       $('#login-modal').modal('hide'); //or  $('#IDModal').modal('hide');
+*/
 
-    // close the login modal and reset the Form
-  //  const modal = document.querySelector('#login-modal');
-//    M.Modal.getInstance(modal).close();
-//    loginForm.reset();
+    // close the login modal and reset the Form // materialize link in index.html would need to be active
+/*    var modal = document.querySelector('#login-modal');
+    M.Modal.getInstance(modal).close();
+    loginForm.reset();
+
+    }); */
   });
 });

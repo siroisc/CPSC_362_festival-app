@@ -1,3 +1,14 @@
+// setup materialize components
+document.addEventListener('DOMContentLoaded', function() {
+
+  var modals = document.querySelectorAll('.modal');
+  //M.Modal.init(modals);
+
+  var items = document.querySelectorAll('.form-control');
+//  M.Modal.init(modals);
+});
+
+
 function login() {
   var email = document.getElementById('usrname').value;
   var password = document.getElementById('psw').value;
