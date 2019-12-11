@@ -1,6 +1,6 @@
-// get dataTables
+// get data from collection: "user" in firebase
 db.collection('user').get().then(snapshot => {
-  console.log(snapshot.docs)
+  setupUserInfo(snapshot.docs)
 });
 
 
@@ -61,6 +61,8 @@ loginForm.addEventListener('submit', (e) => {
   const password = loginForm['psw'].value;
 
   auth.signInWithEmailAndPassword(email, password).then(cred => {
+
+    console.log(cred.user);
     // attempt to close the modal
 /*
     $('#login-form').submit(function(e) {

@@ -130,24 +130,49 @@
  <div class="profile-card">
    <div class="image-container">
      <img src="images/defaultProfileImage.JPG" style="width: 100%">
-     <div class="title">
-       <h2>John Doe</h2>
+     <div class="title user-name">
+       <!-- user's name will be grabbed from DB -->
    </div>
  </div>
- <div class="main-container">
-   <p><i class="fa fa-user-circle-o info"></i>User type</p>
-   <p><i class="fa fa-globe info"></i>United States</p>
-   <p><i class="fa fa-envelope info"></i>User's email address</p>
-   <p><i class="fa fa-key info"><a href="#" style="cursor: pointer;"></i><u>Change Password</u></a></p>
-   <hr>
-   <p><b><i class="fa fa-asterisk info"></i>Planned Events</b></p>
-     <p>Coachella</p>
-     <div class="planned-events-bar">
-     </div>
+ <div class="main-container user-info">
+    <!-- user's info will be grabbed from DB -->
    </div>
   </div>
 </div>
 
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.2/firebase-firestore.js"></script>
+
+
+<script>
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+   apiKey: "AIzaSyAxwewaZkPrE6-SQvs03cDRqSFwoF4Y810",
+   authDomain: "festapp-c7d0d.firebaseapp.com",
+   databaseURL: "https://festapp-c7d0d.firebaseio.com",
+   projectId: "festapp-c7d0d",
+   storageBucket: "festapp-c7d0d.appspot.com",
+   messagingSenderId: "321036829178",
+   appId: "1:321036829178:web:dee30fb0dc33b6083f6443",
+   measurementId: "G-X2BWPB6WHT"
+ };
+ // Initialize Firebase
+ firebase.initializeApp(firebaseConfig);
+ firebase.analytics();
+
+ // make auth and firestore references
+ const auth = firebase.auth();
+ const db = firebase.firestore();
+
+</script>
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

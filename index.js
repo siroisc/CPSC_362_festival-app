@@ -1,3 +1,47 @@
+// setup user's name in profile
+const userName = document.querySelector('.user-name')
+const setupUserName = (data) => {
+
+  let html = '';
+  data.forEach(doc => {
+    const info = doc.data();
+    const field = `
+        <p><i class="fa fa-user-circle-o info"></i>${info.email}</p>
+        <h2>${info.firstname}</h2>
+    `;
+    html += field
+  });
+
+  userName.innerHTML = html;
+};
+
+
+// set user profile info fields
+const userInfo = document.querySelector('.user-info')
+const setupUserInfo = (data) => {
+
+  let html = '';
+  data.forEach(doc => {
+    const info = doc.data();
+    const field = `
+
+        <p><i class="fa fa-user-circle-o info"></i>${info.firstname + ' ' + info.lastname}</p>
+        <p><i class="fa fa-globe info"></i>United States</p>
+        <p><i class="fa fa-envelope info"></i>${info.email}</p>
+        <p><i class="fa fa-key info"><a href="#" style="cursor: pointer;"></i><u>Change Password</u></a></p>
+        <hr>
+        <p><b><i class="fa fa-asterisk info"></i>Planned Events</b></p>
+          <p>Coachella</p>
+          <div class="planned-events-bar">
+          </div>
+    `;
+    html += field
+  });
+
+  userInfo.innerHTML = html;
+}
+
+
 // setup materialize components
 document.addEventListener('DOMContentLoaded', function() {
 
