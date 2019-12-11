@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>FestApp</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,7 +13,6 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <title>FestApp</title>
 </head>
 <style>
   img {margin-bottom: -7px}
@@ -22,6 +22,7 @@
 </style>
 
 <body>
+  <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
@@ -31,7 +32,7 @@
       <button class="w3-padding-large w3-button" title="More">ACCOUNT <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="#" class="w3-bar-item w3-button" data-toggle="modal" data-target="#login-modal">SIGN IN</a>
-        <a href="#" class="w3-bar-item w3-button" data-toggle="modal" data-target="r#eg-modal">REGISTER</a>
+        <a href="#" class="w3-bar-item w3-button" data-toggle="modal" data-target="#reg-modal">REGISTER</a>
       </div>
     </div>
 
@@ -42,7 +43,7 @@
 <div class="login-button">
  <button id="sign-out" type="button" class="w3-padding-large w3-hover-green w3-hide-small w3-right login-button">SIGN OUT</button>
 </div>
-  <a href="login.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">MY PROFILE</a>
+  <a href="user-profile.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">MY PROFILE</a>
   </div>
 </div>
 
@@ -50,6 +51,8 @@
 <div class="logo"style="margin-top:100px;" align="center">
   <h1>FestApp</h1>
 </div>
+
+
 
 
 <div class="container">
@@ -238,7 +241,7 @@
 
     </script>
 
-
+    <script type="text/javascript" src="js/profile.js"></script>
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/jquery.csv.min.js"></script>

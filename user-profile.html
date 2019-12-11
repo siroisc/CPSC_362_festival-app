@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="w3.css">
+  <link rel="stylesheet" href="profile.css">
+  <!-- // Saved CSS file locally as w3.css // <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+<!--  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>FestApp</title>
+</head>
+<style>
+  img {margin-bottom: -7px}
+  .w3-row-padding img {margin-bottom: 12px}
+  body {font-family: "Lato", sans-serif}
+  .mySlides {display: none}
+</style>
+
+<body>
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="festivals.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">FESTIVALS</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">ACCOUNT <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button" data-toggle="modal" data-target="#login-modal">SIGN IN</a>
+        <a href="#" class="w3-bar-item w3-button" data-toggle="modal" data-target="#reg-modal">REGISTER</a>
+      </div>
+    </div>
+
+ <!-- Trigger the login modal -->
+ <div class="login-button">
+  <button type="button" class="w3-padding-large w3-hover-green w3-hide-small w3-right login-button" data-toggle="modal" data-target="#login-modal">SIGN IN</button>
+</div>
+
+<div class="login-button">
+ <button id="sign-out" type="button" class="w3-padding-large w3-hover-green w3-hide-small w3-right login-button">SIGN OUT</button>
+</div>
+  <a href="user-profile.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right">MY PROFILE</a>
+  </div>
+</div>
+
+
+ <!-- Login Modal -->
+ <div id="login-modal" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <h4 style="color:black;"><span class="glyphicon glyphicon-lock"></span>Login</h4>
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+       </div>
+       <div class="modal-body">
+         <form id="login-form" role="form">
+           <div class="form-group">
+             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email Address</label>
+             <input type="text" class="form-control" id="email_address" placeholder="Enter email address">
+           </div>
+           <div class="form-group">
+             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+             <input type="password" class="form-control" id="psw" placeholder="Enter password">
+           </div>
+           <div class="checkbox">
+             <label><input type="checkbox" value="" checked>Remember me</label>
+           </div>
+           <button id="sign-in-button" type="submit" class="btn btn-default btn-success btn-block modal-trigger"><span class="glyphicon glyphicon-off"></span> Sign In</button>
+         </form>
+       </div>
+       <div class="modal-footer">
+         <p class="message">Not registered? <a href="#reg-modal" data-toggle="modal" data-dismiss="modal" style="cursor: pointer;"> <u>Create an account</u></a></p>
+         <br>
+         <p class="form-link">Forgot <a href="#">Password?</a></p>
+       </div>
+     </div>
+   </div>
+ </div>
+
+
+ <!-- Registration Modal -->
+ <div id="reg-modal" class="modal fade" role="dialog">
+   <div class="modal-dialog">
+
+     <!-- Modal content-->
+     <div class="modal-content">
+       <div class="modal-header">
+         <h4 style="color:black;"><span class="glyphicon glyphicon-lock"></span>Register</h4>
+         <button type="button" class="close" data-dismiss="modal">&times;</button>
+       </div>
+       <div class="modal-body">
+         <form id="reg-form" role="form">
+           <div class="form-group">
+             <label for="usrname"><span class="glyphicon glyphicon-user"></span> First Name</label>
+             <input type="text" class="form-control" id="fname" required placeholder="Enter first name">
+           </div>
+           <div class="form-group">
+             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Last name</label>
+             <input type="text" class="form-control" id="lname" required placeholder="Enter last name">
+           </div>
+           <div class="form-group">
+             <label for="usrname"><span class="glyphicon glyphicon-user"></span> Email</label>
+             <input type="email" class="form-control" id="reg_email" required placeholder="Enter email address">
+           </div>
+           <div class="form-group">
+             <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
+             <input type="password" class="form-control" id="reg_psw" required placeholder="Enter password">
+           </div>
+           <button type="submit" class="btn btn-default btn-success btn-block modal-trigger"><span class="glyphicon glyphicon-off"></span> Register</button>
+         </form>
+       </div>
+       <div class="modal-footer">
+         <p class="message">Already have an account? <a href="#login-modal" data-toggle="modal" data-dismiss="modal" style="cursor: pointer;"> <u>Sign In</u></a></p>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <div class="card-container">
+ <!-- Profile Card -->
+ <div class="profile-card">
+   <div class="image-container">
+     <img src="images/defaultProfileImage.JPG" style="width: 100%">
+     <div class="title">
+       <h2>John Doe</h2>
+   </div>
+ </div>
+ <div class="main-container">
+   <p><i class="fa fa-user-circle-o info"></i>User type</p>
+   <p><i class="fa fa-globe info"></i>United States</p>
+   <p><i class="fa fa-envelope info"></i>User's email address</p>
+   <p><i class="fa fa-key info"><a href="#" style="cursor: pointer;"></i><u>Change Password</u></a></p>
+   <hr>
+   <p><b><i class="fa fa-asterisk info"></i>Planned Events</b></p>
+     <p>Coachella</p>
+     <div class="planned-events-bar">
+     </div>
+   </div>
+  </div>
+</div>
+
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/jquery.csv.min.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="js/dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="js/csv_to_html_table.js"></script>
+<script src="scripts/auth.js"></script>
+<script src="index.js"></script>
+
+
+    <!-- compiled and minified JavaScript -->
+    <link src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+</body>
+</html>
